@@ -4,5 +4,5 @@ import com.ps_pn.fitnesskit.domain.model.LessonModel
 
 interface ScheduleRepository {
 
-    fun loadSchedule():List<LessonModel>
+    suspend fun loadSchedule():List<LessonModel>
 }
