@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.ps_pn.fitnesskit.R
 import com.ps_pn.fitnesskit.data.network.dto.Lessons
 import com.ps_pn.fitnesskit.data.repository.ScheduleRepositoryImpl
@@ -26,6 +28,10 @@ class FullScheduleFragment : Fragment() {
         get() = _binding ?: throw RuntimeException("FragmentFullScheduleBinding is null")
 
 
+    private val viewModel by lazy {
+        ViewModelProvider(this)[ScheduleViewModel::class.java]
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -42,18 +48,12 @@ class FullScheduleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val coroutineScope = CoroutineScope(Dispatchers.Main)
-        val scheduleAdapter:ScheduleAdapter = ScheduleAdapter()
+        val scheduleAdapter = ScheduleAdapter()
 
-         coroutineScope.launch {
-             Log.i("TestLOG", "coroutine start!")
-            val data  =  ScheduleRepositoryImpl.loadSchedule()
-             Log.i("TestLOG", "$data")
-            binding.scheduleRV.adapter = scheduleAdapter
-            scheduleAdapter.submitList(data)
-             Log.i("TestLOG", "coroutine end!")
+        viewModel.scheduleList.observe(viewLifecycleOwner){
+            scheduleAdapter.submitList(it)
         }
-
+        binding.scheduleRV.adapter = scheduleAdapter
 
     }
 
