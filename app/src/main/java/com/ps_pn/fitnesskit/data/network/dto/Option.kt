@@ -9,22 +9,22 @@ data class Option(
 
     @SerializedName("club_name")
      @Expose
-    var clubName: String? = null,
+    var clubName: String,
 
     @SerializedName("link_android")
      @Expose
-    var linkAndroid: String? = null,
+    var linkAndroid: String,
 
     @SerializedName("link_ios")
      @Expose
-    var linkIos: String? = null,
+    var linkIos: String,
 
     @SerializedName("primary_color")
      @Expose
-    var primaryColor: String? = null,
+    var primaryColor: String,
 
     @SerializedName("secondary_color")
      @Expose
-    var secondaryColor: String? = null
+    var secondaryColor: String
 
 )
