@@ -19,9 +19,7 @@ data class FitResult(
      @Expose
     var lessons: List<Lessons> ,
 
-    @SerializedName("option")
-     @Expose
-    var option: Option? = Option()
+
 
 
 )

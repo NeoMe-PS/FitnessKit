@@ -9,10 +9,10 @@ data class Tabs(
 
     @SerializedName("id")
      @Expose
-    var id: Int? = null,
+    var id: Int,
 
     @SerializedName("name")
      @Expose
-    var name: String? = null
+    var name: String
 
 )

@@ -54,10 +54,10 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             android:drawablePadding="5dp"
-            style="@style/scheduleTextStyle"
+            style="@style/scheduleTextStyle.Footer"
             app:drawableLeftCompat="@drawable/baseline_person_outline_24"
             app:layout_constraintStart_toEndOf="@+id/startLessonTime_tv"
-            app:layout_constraintTop_toBottomOf="@+id/lessonName_tv"
+            app:layout_constraintBottom_toBottomOf="@+id/endLessonTime_tv"
             tools:text="Smirnov AA" />
 
         <TextView
@@ -66,11 +66,11 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
             android:layout_marginTop="10dp"
-            style="@style/scheduleTextStyle"
+            style="@style/scheduleTextStyle.Footer"
             android:drawablePadding="10dp"
             app:drawableLeftCompat="@drawable/baseline_location_on_24"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lessonName_tv"
+            app:layout_constraintTop_toBottomOf="@+id/lessinTrainer_tv"
             tools:text="Pool" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

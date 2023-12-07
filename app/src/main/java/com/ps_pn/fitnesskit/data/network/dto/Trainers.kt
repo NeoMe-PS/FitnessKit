@@ -9,38 +9,38 @@ data class Trainers(
 
     @SerializedName("id")
      @Expose
-    var id: String? = null,
+    var id: String,
 
     @SerializedName("full_name")
      @Expose
-    var fullName: String? = null,
+    var fullName: String,
 
     @SerializedName("name")
      @Expose
-    var name: String? = null,
+    var name: String,
 
     @SerializedName("last_name")
      @Expose
-    var lastName: String? = null,
+    var lastName: String,
 
     @SerializedName("position")
      @Expose
-    var position: String? = null,
+    var position: String,
 
     @SerializedName("image_url")
      @Expose
-    var imageUrl: String? = null,
+    var imageUrl: String,
 
     @SerializedName("image_url_small")
      @Expose
-    var imageUrlSmall: String? = null,
+    var imageUrlSmall: String,
 
     @SerializedName("image_url_medium")
      @Expose
-    var imageUrlMedium: String? = null,
+    var imageUrlMedium: String,
 
     @SerializedName("description")
      @Expose
-    var description: String? = null
+    var description: String
 
 )

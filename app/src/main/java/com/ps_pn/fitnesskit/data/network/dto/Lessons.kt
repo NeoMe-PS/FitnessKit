@@ -7,37 +7,37 @@ import com.google.gson.annotations.SerializedName
 data class Lessons(
     @SerializedName("name")
      @Expose
-    var name: String? ,
+    var name: String ,
 
     @SerializedName("description")
      @Expose
-    var description: String? ,
+    var description: String ,
 
     @SerializedName("place")
      @Expose
-    var place: String? ,
+    var place: String ,
 
     @SerializedName("coach_id")
      @Expose
-    var coachId: String? ,
+    var coachId: String ,
 
     @SerializedName("startTime")
      @Expose
-    var startTime: String? ,
+    var startTime: String ,
 
     @SerializedName("endTime")
      @Expose
-    var endTime: String? ,
+    var endTime: String ,
 
     @SerializedName("date")
      @Expose
-    var date: String? ,
+    var date: String ,
 
     @SerializedName("tab")
      @Expose
-    var tab: String? ,
+    var tab: String ,
 
     @SerializedName("color")
      @Expose
-    var color: String? ,
+    var color: String ,
 )

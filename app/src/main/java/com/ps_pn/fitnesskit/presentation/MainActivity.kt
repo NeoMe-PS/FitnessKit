@@ -20,14 +20,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        val coroutineScope = CoroutineScope(Dispatchers.IO)
 
-        coroutineScope.launch {
-         val data=  ScheduleRepositoryImpl.loadSchedule()
-            for ( i in data){
-                Log.i("TestLOG", "Test $i")
-            }
-        }
 
 
     }
