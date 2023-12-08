@@ -1,13 +1,16 @@
 package com.ps_pn.fitnesskit.presentation
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.ps_pn.fitnesskit.databinding.FragmentFullScheduleBinding
 import com.ps_pn.fitnesskit.presentation.adapter.ScheduleAdapter
+import javax.inject.Inject
 
 
 class FullScheduleFragment : Fragment() {
@@ -17,7 +20,7 @@ class FullScheduleFragment : Fragment() {
         get() = _binding ?: throw RuntimeException("FragmentFullScheduleBinding is null")
 
 
-    private val viewModel by lazy {
+    private val viewModel: ScheduleViewModel by lazy {
         ViewModelProvider(this)[ScheduleViewModel::class.java]
     }
 
@@ -39,8 +42,14 @@ class FullScheduleFragment : Fragment() {
 
         val scheduleAdapter = ScheduleAdapter()
 
-        viewModel.scheduleList.observe(viewLifecycleOwner){
+        viewModel.scheduleList.observe(viewLifecycleOwner) {
             scheduleAdapter.submitList(it)
+        }
+        viewModel.isLoading.observe(viewLifecycleOwner) {
+            if (it) {
+                binding.scheduleLoadProgress.visibility = View.VISIBLE
+            } else binding.scheduleLoadProgress.visibility = View.GONE
+
         }
         binding.scheduleRV.adapter = scheduleAdapter
 
