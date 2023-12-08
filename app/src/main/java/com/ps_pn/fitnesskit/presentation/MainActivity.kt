@@ -1,14 +1,15 @@
 package com.ps_pn.fitnesskit.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ps_pn.fitnesskit.R
-import com.ps_pn.fitnesskit.data.repository.ScheduleRepositoryImpl
 import com.ps_pn.fitnesskit.databinding.ActivityMainBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +19,23 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
+        setupBottomNavigation()
+
+    }
+
+    private fun setupBottomNavigation(){
+        val navController= findNavController( R.id.nav_host_fragment)
+        val appBarConfiguration = AppBarConfiguration(setOf(
+            R.id.navigation_schedule,
+            R.id.navigation_tasks,
+            R.id.navigation_add,
+            R.id.navigation_chat,
+            R.id.navigation_more,
+        ))
+        setupActionBarWithNavController(navController,appBarConfiguration)
+        binding.navView.setupWithNavController(navController)
 
     }
 }
