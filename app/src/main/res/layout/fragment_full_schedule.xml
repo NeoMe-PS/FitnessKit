@@ -11,6 +11,8 @@
         android:layout_height="match_parent">
 
 
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/schedule_RV"
         android:layout_width="match_parent"
@@ -22,6 +24,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         />
+        <ProgressBar
+            android:id="@+id/scheduleLoad_progress"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

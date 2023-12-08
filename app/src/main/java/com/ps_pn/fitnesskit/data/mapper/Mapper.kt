@@ -3,8 +3,9 @@ package com.ps_pn.fitnesskit.data.mapper
 import com.ps_pn.fitnesskit.data.network.dto.Lessons
 import com.ps_pn.fitnesskit.data.network.dto.Trainers
 import com.ps_pn.fitnesskit.domain.model.LessonModel
+import javax.inject.Inject
 
-class Mapper {
+class Mapper @Inject constructor() {
 
     fun mapDTOToDomainModel(lessonDTO: Lessons,list: List<Trainers>,currentTrainerID:String): LessonModel {
         return LessonModel(
