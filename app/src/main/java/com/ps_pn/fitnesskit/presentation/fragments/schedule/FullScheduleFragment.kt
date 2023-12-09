@@ -1,14 +1,16 @@
-package com.ps_pn.fitnesskit.presentation
+package com.ps_pn.fitnesskit.presentation.fragments.schedule
 
-import android.opengl.Visibility
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.ps_pn.fitnesskit.databinding.FragmentFullScheduleBinding
+import com.ps_pn.fitnesskit.di.App
+import com.ps_pn.fitnesskit.di.ScheduleComponent
+import com.ps_pn.fitnesskit.presentation.ViewModelFactory
 import com.ps_pn.fitnesskit.presentation.adapter.ScheduleAdapter
 import javax.inject.Inject
 
@@ -19,9 +21,18 @@ class FullScheduleFragment : Fragment() {
     private val binding: FragmentFullScheduleBinding
         get() = _binding ?: throw RuntimeException("FragmentFullScheduleBinding is null")
 
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
 
-    private val viewModel: ScheduleViewModel by lazy {
-        ViewModelProvider(this)[ScheduleViewModel::class.java]
+    private val component: ScheduleComponent by lazy {
+        (requireActivity().application as App).component
+    }
+
+    private lateinit var viewModel: ScheduleViewModel
+
+    override fun onAttach(context: Context) {
+        component.inject(this)
+        super.onAttach(context)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +44,9 @@ class FullScheduleFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        viewModel = ViewModelProvider(this, viewModelFactory)[ScheduleViewModel::class.java]
         _binding = FragmentFullScheduleBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 

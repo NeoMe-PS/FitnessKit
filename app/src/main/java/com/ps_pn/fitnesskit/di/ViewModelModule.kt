@@ -1,12 +1,20 @@
 package com.ps_pn.fitnesskit.di
 
-import androidx.lifecycle.ViewModelProvider
-import com.ps_pn.fitnesskit.presentation.ScheduleViewModel
+import androidx.lifecycle.ViewModel
+import com.ps_pn.fitnesskit.presentation.fragments.schedule.ScheduleViewModel
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
+import dagger.multibindings.IntoMap
 
 
 @Module
-class ViewModelModule {
+interface ViewModelModule {
+
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ScheduleViewModel::class)
+    fun bindScheduleViewModel(viewModel: ScheduleViewModel): ViewModel
+
 
 }

@@ -6,8 +6,9 @@ import com.ps_pn.fitnesskit.domain.model.LessonModel
 import com.ps_pn.fitnesskit.domain.repository.ScheduleRepository
 import javax.inject.Inject
 
-object ScheduleRepositoryImpl : ScheduleRepository {
-    private val mapper: Mapper = Mapper()
+class ScheduleRepositoryImpl @Inject constructor(private val mapper: Mapper )
+    : ScheduleRepository {
+
 
     override suspend fun loadSchedule(): List<LessonModel> {
         val trainers = apiService.getScheduleList().trainers

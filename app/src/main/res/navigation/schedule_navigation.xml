@@ -7,27 +7,27 @@
 
     <fragment
         android:id="@+id/navigation_schedule"
-        android:name="com.ps_pn.fitnesskit.presentation.FullScheduleFragment"
+        android:name="com.ps_pn.fitnesskit.presentation.fragments.schedule.FullScheduleFragment"
         android:label="fragment_full_schedule"
         tools:layout="@layout/fragment_full_schedule" />
     <fragment
         android:id="@+id/navigation_tasks"
-        android:name="com.ps_pn.fitnesskit.TaskFragment"
+        android:name="com.ps_pn.fitnesskit.presentation.fragments.task.TaskFragment"
         android:label="fragment_task"
         tools:layout="@layout/fragment_task" />
     <fragment
         android:id="@+id/navigation_add"
-        android:name="com.ps_pn.fitnesskit.AddFragment"
+        android:name="com.ps_pn.fitnesskit.presentation.fragments.add.AddFragment"
         android:label="fragment_add"
         tools:layout="@layout/fragment_add" />
     <fragment
         android:id="@+id/navigation_chat"
-        android:name="com.ps_pn.fitnesskit.ChatFragment"
+        android:name="com.ps_pn.fitnesskit.presentation.fragments.chat.ChatFragment"
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" />
     <fragment
         android:id="@+id/navigation_more"
-        android:name="com.ps_pn.fitnesskit.MoreFragment"
+        android:name="com.ps_pn.fitnesskit.presentation.fragments.more.MoreFragment"
         android:label="fragment_more"
         tools:layout="@layout/fragment_more" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.ps_pn.fitnesskit
+package com.ps_pn.fitnesskit.presentation.fragments.task
 
 import androidx.lifecycle.ViewModel
 

@@ -6,7 +6,7 @@ import javax.inject.Inject
 class App : Application() {
 
 
-    private val component: ScheduleComponent by lazy {
+     val component: ScheduleComponent by lazy {
         DaggerScheduleComponent.factory().create(this)
     }
 

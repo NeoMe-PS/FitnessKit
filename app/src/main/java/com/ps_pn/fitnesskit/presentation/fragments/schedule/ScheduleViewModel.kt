@@ -1,4 +1,4 @@
-package com.ps_pn.fitnesskit.presentation
+package com.ps_pn.fitnesskit.presentation.fragments.schedule
 
 import android.os.Build
 import androidx.lifecycle.LiveData
@@ -16,11 +16,9 @@ import java.time.format.TextStyle
 import java.util.Locale
 import javax.inject.Inject
 
-class ScheduleViewModel : ViewModel() {
+class ScheduleViewModel @Inject constructor( private val loadScheduleUseCase: LoadScheduleUseCase)
+    : ViewModel() {
 
-
-    private val loadScheduleUseCase: LoadScheduleUseCase =
-        LoadScheduleUseCase(ScheduleRepositoryImpl)
 
     private var _scheduleList = MutableLiveData<List<AdapterLessonEntity>>()
     val scheduleList: LiveData<List<AdapterLessonEntity>>

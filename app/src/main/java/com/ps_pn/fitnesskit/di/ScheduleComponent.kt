@@ -1,13 +1,12 @@
 package com.ps_pn.fitnesskit.di
 
 import android.app.Application
-import com.ps_pn.fitnesskit.presentation.FullScheduleFragment
+import com.ps_pn.fitnesskit.presentation.fragments.schedule.FullScheduleFragment
 import dagger.BindsInstance
 import dagger.Component
-import javax.inject.Inject
 
 
-@Component(modules = [DataModule::class])
+@Component(modules = [DataModule::class,ViewModelModule::class])
 interface ScheduleComponent {
 
 
