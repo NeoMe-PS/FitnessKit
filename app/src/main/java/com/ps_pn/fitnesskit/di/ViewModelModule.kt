@@ -9,8 +9,6 @@ import dagger.multibindings.IntoMap
 
 @Module
 interface ViewModelModule {
-
-
     @Binds
     @IntoMap
     @ViewModelKey(ScheduleViewModel::class)

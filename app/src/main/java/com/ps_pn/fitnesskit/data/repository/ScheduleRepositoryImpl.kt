@@ -9,10 +9,11 @@ import javax.inject.Inject
 class ScheduleRepositoryImpl @Inject constructor(private val mapper: Mapper )
     : ScheduleRepository {
 
-
     override suspend fun loadSchedule(): List<LessonModel> {
         val trainers = apiService.getScheduleList().trainers
-        return apiService.getScheduleList().lessons.map { mapper.mapDTOToDomainModel(it,trainers,it.coachId?:"") }
+        return apiService.getScheduleList().lessons.map { mapper.mapDTOToDomainModel(it,trainers,
+            it.coachId
+        ) }
     }
 
 }
