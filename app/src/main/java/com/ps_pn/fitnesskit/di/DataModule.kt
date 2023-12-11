@@ -11,12 +11,8 @@ import dagger.Provides
 
 @Module
 interface DataModule {
-
-
     @Binds
     fun bindScheduleRepository(impl: ScheduleRepositoryImpl):ScheduleRepository
-
-
     companion object{
 
         @Provides

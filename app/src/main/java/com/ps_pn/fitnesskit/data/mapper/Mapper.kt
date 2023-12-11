@@ -6,7 +6,6 @@ import com.ps_pn.fitnesskit.domain.model.LessonModel
 import javax.inject.Inject
 
 class Mapper @Inject constructor() {
-
     fun mapDTOToDomainModel(lessonDTO: Lessons,list: List<Trainers>,currentTrainerID:String): LessonModel {
         return LessonModel(
             name = lessonDTO.name,
@@ -24,7 +23,7 @@ class Mapper @Inject constructor() {
    private fun getTrainerName(trainers: List<Trainers>,currentTrainerID:String):String{
        for (i in trainers) {
            if (i.id == currentTrainerID) {
-               return i.fullName?:""
+               return i.fullName
            }
        }
        return ""

@@ -6,13 +6,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.ps_pn.fitnesskit.R
-import com.ps_pn.fitnesskit.databinding.ScheduleItemBinding
-import com.ps_pn.fitnesskit.domain.model.LessonModel
 
 class ScheduleAdapter :
-    ListAdapter<AdapterLessonEntity, ScheduleItemHolder>(ScheduleDiffCallBack()) {
-
-
+    ListAdapter<AdapterLessonEntity, ScheduleItemHolder>(ScheduleDiffCallBack())
+{
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScheduleItemHolder {
         val inflater = LayoutInflater.from(parent.context)
         val viewType = when (viewType) {
@@ -37,12 +34,10 @@ class ScheduleAdapter :
                 holder.location.text = item.lesson?.place
                 holder.itemView.backgroundTintList = ColorStateList.valueOf(Color.parseColor(item.lesson?.color))
             }
-
             TrainingType.HEADER -> {
                 holder.date.text = item.header
             }
         }
-
 
     }
 }

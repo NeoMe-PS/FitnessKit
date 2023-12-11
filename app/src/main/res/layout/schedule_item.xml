@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="5dp"
+    android:layout_margin="16dp"
     android:backgroundTint="#61FF50"
-    android:layout_margin="16dp">
+    app:cardCornerRadius="5dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,62 +15,61 @@
         android:background="@color/white"
         android:padding="5dp">
 
-
         <TextView
             android:id="@+id/startLessonTime_tv"
-            android:layout_width="wrap_content"
             style="@style/scheduleTextStyle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/lessonName_tv"
+            app:layout_constraintStart_toStartOf="parent"
             tools:text="11:20" />
 
         <TextView
             android:id="@+id/endLessonTime_tv"
-            android:layout_width="wrap_content"
             style="@style/scheduleTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lessonName_tv"
             tools:text="13:30" />
 
         <TextView
             android:id="@+id/lessonName_tv"
+            style="@style/scheduleTextStyle.Header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            style="@style/scheduleTextStyle.Header"
             app:layout_constraintStart_toEndOf="@+id/startLessonTime_tv"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Footbal" />
+            tools:text="Football" />
 
         <TextView
-            android:id="@+id/lessinTrainer_tv"
+            android:id="@+id/lessonTrainer_tv"
+            style="@style/scheduleTextStyle.Footer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             android:drawablePadding="5dp"
-            style="@style/scheduleTextStyle.Footer"
             app:drawableLeftCompat="@drawable/baseline_person_outline_24"
-            app:layout_constraintStart_toEndOf="@+id/startLessonTime_tv"
             app:layout_constraintBottom_toBottomOf="@+id/endLessonTime_tv"
+            app:layout_constraintStart_toEndOf="@+id/startLessonTime_tv"
             tools:text="Smirnov AA" />
 
         <TextView
             android:id="@+id/lessonPlace_tv"
+            style="@style/scheduleTextStyle.Footer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="15dp"
             android:layout_marginTop="10dp"
-            style="@style/scheduleTextStyle.Footer"
+            android:layout_marginEnd="15dp"
             android:drawablePadding="10dp"
             app:drawableLeftCompat="@drawable/baseline_location_on_24"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lessinTrainer_tv"
+            app:layout_constraintTop_toBottomOf="@+id/lessonTrainer_tv"
             tools:text="Pool" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
